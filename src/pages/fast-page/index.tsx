@@ -1,5 +1,5 @@
 
-import { Suspense, use, useEffect, useState } from "react";
+import { memo, Suspense, use, useEffect, useState } from "react";
 import { SlowComponent } from "../../components/SlowComponent";
 
 
@@ -11,7 +11,7 @@ const TaskBreaker: React.FC<any> = ({ children, P }) => {
   return <>{children}</>;
 };
 
-function FastWrapper({ children }: { children: React.ReactNode }) {
+const FastWrapper = memo(function FastWrapper({ children }: { children: React.ReactNode }) {
   // @ts-ignore new feature that is not supported in ts
   const breakTask = globalThis.scheduler?.yield()
 
@@ -20,14 +20,11 @@ function FastWrapper({ children }: { children: React.ReactNode }) {
       {children}
     </TaskBreaker>
   </Suspense>
-}
-
-
+})
 
 export default function Home() {
   return (
-    <div
-    >
+    <div>
       <h1> Fast page </h1>
       <FastWrapper> <SlowComponent >
         <FastWrapper> <SlowComponent >
