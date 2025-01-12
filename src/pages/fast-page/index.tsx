@@ -1,5 +1,6 @@
 
 import { Suspense, use, useEffect, useState } from "react";
+import { SlowComponent } from "../../components/SlowComponent";
 
 
 const TaskBreaker: React.FC<any> = ({ children, P }) => {
@@ -23,27 +24,7 @@ function FastWrapper({ children }: { children: React.ReactNode }) {
 
 
 
-function SlowComponent({ children }: { children?: React.ReactNode }) {
-  const stopTime = Date.now() + 40;
-  let i = 0;
-  if (typeof window !== 'undefined') {
-    while (Date.now() < stopTime) {
-      i += Math.random();
-    }
-  }
-
-  console.log(i)
-  return <div>
-    Slow component
-    {children}
-  </div>
-}
-
-
-
 export default function Home() {
-
-
   return (
     <div
     >
