@@ -29,20 +29,20 @@ export default function Home() {
     <div
     >
       <h1> Fast page </h1>
-
       <FastWrapper> <SlowComponent >
         <FastWrapper> <SlowComponent >
           <FastWrapper> <SlowComponent >
-            <FastWrapper> <SlowComponent ></SlowComponent></FastWrapper>
+            <FastWrapper> <SlowComponent >
+              <FastWrapper> <SlowComponent >
+                <FastWrapper> <SlowComponent >
+                  <FastWrapper> <SlowComponent >
+                  </SlowComponent></FastWrapper>
+                </SlowComponent></FastWrapper>
+              </SlowComponent></FastWrapper>
+            </SlowComponent></FastWrapper>
           </SlowComponent></FastWrapper>
         </SlowComponent></FastWrapper>
       </SlowComponent></FastWrapper>
-
-
-      <FastWrapper> <SlowComponent ></SlowComponent></FastWrapper>
-      <FastWrapper> <SlowComponent ></SlowComponent></FastWrapper>
-      <FastWrapper> <SlowComponent ></SlowComponent></FastWrapper>
-
     </div>
   );
 }
