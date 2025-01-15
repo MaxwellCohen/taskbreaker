@@ -1,5 +1,7 @@
 import { SlowComponent } from "@/components/SlowComponent";
-import { useEffect, useState } from "react";
+
+export const dynamic = 'force-dynamic';
+
 
 export default function Home() {
 
